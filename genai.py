@@ -1,9 +1,12 @@
 import nltk
+from nltk.tokenize import word_tokenize
+from nltk.util import ngrams
 
 #Downloading stuff that will be used to tokenize the text
 nltk.download('punkt')
 
-sample_text = 'I am learning Generative AI'
-tokens = nltk.word_tokenize(sample_text.lower())
+sentence = 'I am learning Generative AI'
+tokens = word_tokenize(sentence)
+bigrams = list(ngrams(tokens, 2))
 
-print('Tokens:', tokens)
+print(bigrams)
